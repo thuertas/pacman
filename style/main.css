@@ -1,0 +1,208 @@
+/*------------ WEBPAGE SETTINGS ------------*/
+html, body {height: 100%;}
+section {
+    height: 100%;/*to make each section (Home, Hish Scores, How to play and players) full screen*/
+    display: block;
+    border-bottom: 2px dotted #FFD300;/*the :after doesnt work in this case because I made the section full screen. Hence I had to add the border-bottom*/
+}
+
+#fourth-sec {border-bottom: none;} /*the last section doesn't have border*/
+
+@font-face {
+    src: url(../fonts/prstartk.ttf);
+    font-family: PressStartK;
+}
+
+body {
+    margin: 0px;
+    background-color: #000000;
+    font-family: PressStartK, 'Press Start 2P', cursive;/*added Google's 2P font in case PressStartK is not loaded*/
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*------------ GRID SETTINGS ------------*/
+/****Navigation****/
+.grid, .nav-grid, .table-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 60px;
+    grid-row-gap: 30px;
+    padding: 10px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/****Home****/
+div.grid {
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-column-gap: 10px;
+    width: 40%;
+}
+
+/****High scores and players****/
+.table-grid {
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 0px;
+    grid-row-gap: 18px;
+    width: 80%;
+    list-style-type: none;
+}
+
+#fourth-sec .table-grid {
+    grid-row-gap: 10px;
+}
+
+/*------------ BODY ------------*/
+/****Navigation****/
+nav {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: #000000;
+}
+
+nav a, nav a:visited, nav a:hover, nav a:link {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color .5s;/*time for the color change when hovered*/
+}
+
+nav .menu {
+    width: 60%;
+    margin: 0px auto;
+}
+
+nav .nav-grid a:hover {
+    color: #FFD300;
+}
+
+/****Home****/
+.pac-title {
+    width: 650px;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+div.grid img {
+    width: 60px;
+}
+
+div.grid .container img {
+    position: absolute;
+}
+
+div.grid .grid-item1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    transform: scaleX(-1);/*to flip the image*/
+}
+
+.grid + p {
+    position: absolute;
+    left: 33%;
+    right: 34%;
+    top: 80%;
+}
+
+hr {
+    border-color: #FFD300;
+}
+
+/****High Scores****/
+.title {
+    margin-top: 5%;
+}
+
+#second-sec .title {
+    color: #FFD300;
+}
+
+#second-sec .table-grid .th {
+    margin-bottom: 20px;
+}
+
+.table-grid li.red:nth-child(n) {
+    color: #FF0401;
+}
+
+.table-grid li.blue:nth-child(n) {
+    color: #74F5F9;
+}
+
+.table-grid li.purple:nth-child(n) {
+    color: #FF60B0;
+}
+
+.table-grid li.yellow:nth-child(n) {
+    color: #FFA002;
+}
+
+/****How to play****/
+#third-sec h1 {
+    margin-top: 120px;
+}
+
+.paragraph {
+    text-transform: lowercase;
+    width: 55%;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.paragraph span {
+    text-transform: uppercase;
+    color: #FFD300;
+}
+
+/****Players****/
+.marging-left {
+    margin-left: 5px;
+}
+
+.table-grid img {
+    width: 60px;
+}
+
+.big-dot {
+    font-size: 50px;
+    color: #FFD300;
+}
+
+.mid-dot {
+    font-size: 25px;
+    color: #FFD300;
+}
+
+#fourth-sec div p {
+    display: inline;
+}
+
+#fourth-sec img {
+    width: 60px;
+}
+
+/*the following are meant to set the colors of the players table*/
+body section#fourth-sec .table-grid div:nth-child(-n+3){
+    color: #FF0401;
+}
+
+section#fourth-sec .table-grid div:nth-child(-n+6) {
+    color: #FF60B0;
+}
+
+#fourth-sec .table-grid div:nth-child(-n+9) {
+    color: #74F5F9;
+}
+
+.table-grid div:nth-child(-n+12) {
+    color: #FFA002;
+}
+
+/****Footer****/
+footer {
+    margin-top: 60px;
+    padding: 2px 0;
+}

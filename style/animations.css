@@ -1,0 +1,65 @@
+/*The animations for pacman and the ghosts (in the home and the how to play pages) represents two parts:
+                    <1>
+    The ghosts are shaching pacman
+    <------- from right to left
+    pacman is facing left
+    The ghosts look normal
+
+                    <2>
+    Pacman is shacing the scared ghosts
+    --------> from left to right
+    pacman is facing right
+    the ghosts change the appearance (scared)
+
+                REPEAT infinitely
+*/
+
+/*------------ KEYFRAMES ------------*/
+@keyframes pacman-ghosts {
+    from {left:100%;}
+    to   {left:-100%;}
+}
+
+@keyframes pacman {
+    0%   {transform: scaleX(-1);}
+    25%  {transform: scaleX(-1);}
+    75%  {transform: scaleX(1);}
+    100% {transform: scaleX(1);}
+}
+
+@keyframes ghosts-top {/*to show the normal ghosts*/
+    from {opacity: 1;}
+    to   {opacity: 0;}
+}
+
+@keyframes ghosts-bottom {/*to show the scared ghosts*/
+    from {opacity: 0;}
+    to   {opacity: 1;}
+}
+
+@keyframes insert-coin {
+    from {color: transparent;}
+    to   {color: #ffffff;}
+}
+
+/*------------ ANIMATION SETTINGS ------------*/
+.grid {
+    position: relative;
+    animation: pacman-ghosts 10s ease 0s infinite alternate none running;
+}
+
+div.grid .grid-item1 {
+    animation: pacman 20s ease 0s infinite normal none running;
+}
+
+.top {
+    animation: ghosts-top 20s ease-in-out -.5s infinite normal none running;
+}
+
+.bottom {
+    animation: ghosts-bottom 20s ease-in-out -.5s infinite normal none running;
+}
+
+.grid + p {
+    animation: insert-coin 1s ease-in-out 0s infinite alternate none running;
+}
